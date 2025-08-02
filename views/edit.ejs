@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Post</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-800 text-white min-h-screen font-sans">
+
+  <!-- Navbar -->
+  <%- include('partials/navbar', { user }) %>
+
+  <!-- Main Content -->
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <div class="bg-zinc-900 p-6 rounded-2xl shadow-lg space-y-6 border border-orange-500">
+      <h2 class="text-3xl font-bold text-orange-400">Edit Your Post</h2>
+      
+      <form action="/update/<%= post._id %>" method="POST" class="space-y-4">
+        <textarea 
+          name="content" 
+          rows="5" 
+          placeholder="What's on your mind?" 
+          class="w-full p-4 rounded-lg bg-zinc-800 text-white placeholder-orange-300 border border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+        ><%= post.content %></textarea>
+        
+        <button 
+          type="submit" 
+          class="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg transition font-semibold"
+        >
+          Update Post
+        </button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

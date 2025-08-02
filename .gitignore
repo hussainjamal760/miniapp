@@ -1,0 +1,25 @@
+# .gitignore
+
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Uploaded images (optional — only if you don't want to track uploaded files)
+public/uploads/
+
+# Optional: VSCode settings
+.vscode/
+
+# Render build cache (optional but clean)
+render-build/
