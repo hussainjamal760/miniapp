@@ -7,6 +7,8 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const path = require('path')
 const upload = require("./config/multerConfig");
+const PORT = process.env.PORT || 3000;
+
 
 app.set('view engine', 'ejs');
 app.use(express.json());
@@ -153,4 +155,6 @@ function isLoggedIn(req, res, next) {
   next();
 }
 
-app.listen(3000);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
